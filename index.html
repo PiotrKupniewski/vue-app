@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Hello world !</h1>
+
+    <div id="root">
+        <p> v-on:click="changeMessage()>" {{ getMessage }} </p>
+    </div>
+
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    var Message = Vue.extend({
+        template : '<div> Lubie fasolową </div>'
+    })
+
+    var m = new Message({el: "'#message"})
+
+    
+        var app = new Vue({
+          el:'#root',
+        //    template:'<div>Ala ma kota</div>'  ,
+        data : {
+            message : 'Ala ma kota albo 2 '
+        },
+        methods :{
+            getMessage(){
+                return this.message
+            },
+            changeMessage(){
+                this.message = 'Lubie placki'
+            }
+        }
+        })
+    </script>
+</body>
+</html>
